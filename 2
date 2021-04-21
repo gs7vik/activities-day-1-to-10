@@ -1,0 +1,17 @@
+#include<stdio.h>
+
+int main()
+{
+	int n,a[10],i=0,j;
+	printf("enter number\n");
+	scanf("%d",&n);
+	while(n>0)
+	{
+		a[i]=n%10;
+		n=n/10;
+		i++;
+	}
+	for(j=i-1;j>=0;j--)
+		printf("%d\n",a[j]);
+		
+}
