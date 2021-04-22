@@ -1,0 +1,147 @@
+Program 1:Program to print the factors of a given integer
+
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++){
+        if(n%i==0){
+            printf("%d\n",i);
+        }
+    }
+}
+
+
+Program 2: Program to print the prime factors of a given integer
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("The prime factors of the number are\n");
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {   int count=0;
+            for(j=1;j<=i;j++)
+            {
+                if(i%j==0)
+                count++;
+            }
+            if(count==2)
+            printf("%d  ",(--j));
+        }
+    }
+    return 0;
+}
+
+
+
+
+Program 3:
+program to check if the given number is Happy Number or not !!
+A number is said to be happy if it yields 1 when replaced by the sum of squares
+of its digits repeatedly.
+If this process results in an endless cycle of numbers containing 4,
+then the number will be an unhappy number.
+Example
+Number = 32
+3^2+ 2^2 = 13
+1^2 + 3^2 = 10
+1^2 + 0^2 = 1 Happy Number
+8^2 + 2^2 = 68
+6^2 + 8^2 = 100
+1^2 + 0^2 + 02 = 1
+82 is a happy number number
+
+# include <stdio.h>
+#include<math.h>
+
+void main()
+{
+    int n,i,rem,sum;
+    printf("enter a number\n");
+    scanf("%d",&n);
+    for(i=0;i<3;i++)
+    {
+        while(n>0)
+        {
+            rem=n%10;
+            sum=sum+(rem*rem);
+            n=n/10;
+        }
+        n=sum;
+        sum=0;
+    }
+    if(n==1)
+        printf("happy number\n");
+    else
+        printf("unhappy number\n");
+}
+
+
+
+Program 4:
+progam to check whether a number is a pronic number or not . Use Ternary operator
+A number is said to be pronic number if it is a product of two consecutive numbers.
+For examples:
+6 = 2 x 3
+72 = 8 x 9
+
+
+#include <stdio.h>
+
+int main()
+{
+    
+    int n,i,check;
+    printf("Enter the number\n");
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+       if((i*(i+1))==n)
+       {check=1;
+       }
+         
+           
+       
+       
+    }
+    
+    (check==1)?printf("It is a pronic number"):printf("Not a pronic number");
+    
+
+    return 0;
+}
+
+
+
+Program 5:
+Write aprogram to convert a decimal number to binary.
+Example : input 120
+output : 1111000
+
+#include <stdio.h>
+int main() 
+{
+    int a[10], number, i, j;
+    printf("\n Please Enter the Number You want to Convert  :  ");
+    scanf("%d", &number);
+    
+    for(i = 0; number > 0; i++)
+    {
+        a[i] = number % 2;
+        number = number / 2;
+    }
+    
+    printf("\n Binary Number of a Given Number =  ");
+    for(j = i - 1; j >= 0; j--)  {
+        printf(" %d ", a[j]);
+    }
+    printf("\n");
+    return 0;
+}
