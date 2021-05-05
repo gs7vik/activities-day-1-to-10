@@ -1,0 +1,135 @@
+/******************************************************************************
+Program to access digits of a given integer and print them 
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("enter a number\n");
+    scanf("%d ,&n");
+    while(n>0)
+    {
+        printf("%d\t",n%10);
+        n=n/10;
+    }
+    return 0;
+}
+
+/******************************************************************************
+Program to access digits of a given integer and print them in the same order
+*******************************************************************************/
+
+#include<stdlib.h>
+#include <stdio.h>
+
+void printdigit(int n,int a[])
+{
+    int i=0;
+    while(n>0)
+    {
+        a[i]=n%10;
+        n=n/10;
+        i++;
+    }
+    for(i=i-1;i>=0;i--)
+    {
+        printf("%d\t",a[i]);
+    }
+}
+
+int main()
+{
+    int n,d,a[10];
+    printf("enter number\n");
+    scanf("%d",&n);
+    printdigit(n,a);
+}
+
+/**********************************************************
+Program to print even and odd  digits of a given integer 
+***********************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int n,d,o[10],e[10],i=0,j=0,k;
+    printf("enter number\n");
+    scanf("%d",&n);
+    while(n>0)
+    {
+        d=n%10;
+        if(d%2==0)
+        {
+            e[i]=d;
+            i++;
+        }
+        else
+        {
+            o[j]=d;
+            j++;
+        }
+        n=n/10;
+    }
+    for(k=j-1;k>=0;k--)
+    {
+        printf("%d\t",o[k]);
+    }
+    printf("\n");
+    for(k=i-1;k>=0;k--)
+    {
+        printf("%d\t",e[k]);
+    }
+}
+
+/**********************************************************
+Program to check whether a given number is  a prime or not  
+***********************************************************/
+
+#include <stdio.h>
+#include<math.h>
+
+int main()
+{
+    int num= 102, flag=0;
+    for(int i=2; i<sqrt(num);i++)
+    {
+        if((num%i)==0)
+            {
+                printf("the number %d is not a prime\t", num);
+                flag=1;
+                break;
+
+            }
+    }    
+    if(flag==0)
+    printf("the number %d is prime\t", num);
+}
+
+/*********************************************
+Program to print prime numbers from 2 to n   
+**********************************************/
+
+#include <stdio.h>
+#include<math.h>
+
+int main()
+{
+    int num= 150,flag=0;
+    for(int i=2;i<=150;i++)
+    {
+        flag=1;
+        for(int j=2; j<=sqrt(i); j++)
+        {
+            if((i%j)==0)
+             {
+                 flag=0;
+                 break;
+             }
+        }
+        if(flag==1)
+         printf("%d\t", i);
+    }
+    
+}
